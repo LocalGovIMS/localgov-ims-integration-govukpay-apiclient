@@ -34,8 +34,9 @@ namespace GovUKPayApiClient.Api
         /// </remarks>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">Payment identifier</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void CancelAPayment(string paymentId);
+        void CancelAPayment(string paymentId, int operationIndex = 0);
 
         /// <summary>
         /// Cancel payment
@@ -45,8 +46,9 @@ namespace GovUKPayApiClient.Api
         /// </remarks>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">Payment identifier</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> CancelAPaymentWithHttpInfo(string paymentId);
+        ApiResponse<Object> CancelAPaymentWithHttpInfo(string paymentId, int operationIndex = 0);
         /// <summary>
         /// Capture payment
         /// </summary>
@@ -55,8 +57,9 @@ namespace GovUKPayApiClient.Api
         /// </remarks>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">Payment identifier</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void CaptureAPayment(string paymentId);
+        void CaptureAPayment(string paymentId, int operationIndex = 0);
 
         /// <summary>
         /// Capture payment
@@ -66,8 +69,9 @@ namespace GovUKPayApiClient.Api
         /// </remarks>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">Payment identifier</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> CaptureAPaymentWithHttpInfo(string paymentId);
+        ApiResponse<Object> CaptureAPaymentWithHttpInfo(string paymentId, int operationIndex = 0);
         /// <summary>
         /// Create new payment
         /// </summary>
@@ -76,8 +80,9 @@ namespace GovUKPayApiClient.Api
         /// </remarks>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCardPaymentRequest">requestPayload</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CreatePaymentResult</returns>
-        CreatePaymentResult CreateAPayment(CreateCardPaymentRequest createCardPaymentRequest);
+        CreatePaymentResult CreateAPayment(CreateCardPaymentRequest createCardPaymentRequest, int operationIndex = 0);
 
         /// <summary>
         /// Create new payment
@@ -87,8 +92,9 @@ namespace GovUKPayApiClient.Api
         /// </remarks>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCardPaymentRequest">requestPayload</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CreatePaymentResult</returns>
-        ApiResponse<CreatePaymentResult> CreateAPaymentWithHttpInfo(CreateCardPaymentRequest createCardPaymentRequest);
+        ApiResponse<CreatePaymentResult> CreateAPaymentWithHttpInfo(CreateCardPaymentRequest createCardPaymentRequest, int operationIndex = 0);
         /// <summary>
         /// Find payment by ID
         /// </summary>
@@ -97,8 +103,9 @@ namespace GovUKPayApiClient.Api
         /// </remarks>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">Payment identifier</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetPaymentResult</returns>
-        GetPaymentResult GetAPayment(string paymentId);
+        GetPaymentResult GetAPayment(string paymentId, int operationIndex = 0);
 
         /// <summary>
         /// Find payment by ID
@@ -108,8 +115,9 @@ namespace GovUKPayApiClient.Api
         /// </remarks>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">Payment identifier</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetPaymentResult</returns>
-        ApiResponse<GetPaymentResult> GetAPaymentWithHttpInfo(string paymentId);
+        ApiResponse<GetPaymentResult> GetAPaymentWithHttpInfo(string paymentId, int operationIndex = 0);
         /// <summary>
         /// Return payment events by ID
         /// </summary>
@@ -118,8 +126,9 @@ namespace GovUKPayApiClient.Api
         /// </remarks>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">Payment identifier</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PaymentEvents</returns>
-        PaymentEvents GetEventsForAPayment(string paymentId);
+        PaymentEvents GetEventsForAPayment(string paymentId, int operationIndex = 0);
 
         /// <summary>
         /// Return payment events by ID
@@ -129,8 +138,9 @@ namespace GovUKPayApiClient.Api
         /// </remarks>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">Payment identifier</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PaymentEvents</returns>
-        ApiResponse<PaymentEvents> GetEventsForAPaymentWithHttpInfo(string paymentId);
+        ApiResponse<PaymentEvents> GetEventsForAPaymentWithHttpInfo(string paymentId, int operationIndex = 0);
         /// <summary>
         /// Search payments
         /// </summary>
@@ -151,8 +161,9 @@ namespace GovUKPayApiClient.Api
         /// <param name="lastDigitsCardNumber">Last four digits of the card used to make payment (optional)</param>
         /// <param name="fromSettledDate">From settled date of payment to be searched (this date is inclusive). Example&#x3D;2015-08-13 (optional)</param>
         /// <param name="toSettledDate">To settled date of payment to be searched (this date is inclusive). Example&#x3D;2015-08-14 (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PaymentSearchResults</returns>
-        PaymentSearchResults SearchPayments(string reference = default(string), string email = default(string), string state = default(string), string cardBrand = default(string), string fromDate = default(string), string toDate = default(string), string page = default(string), string displaySize = default(string), string cardholderName = default(string), string firstDigitsCardNumber = default(string), string lastDigitsCardNumber = default(string), string fromSettledDate = default(string), string toSettledDate = default(string));
+        PaymentSearchResults SearchPayments(string reference = default(string), string email = default(string), string state = default(string), string cardBrand = default(string), string fromDate = default(string), string toDate = default(string), string page = default(string), string displaySize = default(string), string cardholderName = default(string), string firstDigitsCardNumber = default(string), string lastDigitsCardNumber = default(string), string fromSettledDate = default(string), string toSettledDate = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Search payments
@@ -174,8 +185,9 @@ namespace GovUKPayApiClient.Api
         /// <param name="lastDigitsCardNumber">Last four digits of the card used to make payment (optional)</param>
         /// <param name="fromSettledDate">From settled date of payment to be searched (this date is inclusive). Example&#x3D;2015-08-13 (optional)</param>
         /// <param name="toSettledDate">To settled date of payment to be searched (this date is inclusive). Example&#x3D;2015-08-14 (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PaymentSearchResults</returns>
-        ApiResponse<PaymentSearchResults> SearchPaymentsWithHttpInfo(string reference = default(string), string email = default(string), string state = default(string), string cardBrand = default(string), string fromDate = default(string), string toDate = default(string), string page = default(string), string displaySize = default(string), string cardholderName = default(string), string firstDigitsCardNumber = default(string), string lastDigitsCardNumber = default(string), string fromSettledDate = default(string), string toSettledDate = default(string));
+        ApiResponse<PaymentSearchResults> SearchPaymentsWithHttpInfo(string reference = default(string), string email = default(string), string state = default(string), string cardBrand = default(string), string fromDate = default(string), string toDate = default(string), string page = default(string), string displaySize = default(string), string cardholderName = default(string), string firstDigitsCardNumber = default(string), string lastDigitsCardNumber = default(string), string fromSettledDate = default(string), string toSettledDate = default(string), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -193,9 +205,10 @@ namespace GovUKPayApiClient.Api
         /// </remarks>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">Payment identifier</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task CancelAPaymentAsync(string paymentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task CancelAPaymentAsync(string paymentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Cancel payment
@@ -205,9 +218,10 @@ namespace GovUKPayApiClient.Api
         /// </remarks>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">Payment identifier</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> CancelAPaymentWithHttpInfoAsync(string paymentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> CancelAPaymentWithHttpInfoAsync(string paymentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Capture payment
         /// </summary>
@@ -216,9 +230,10 @@ namespace GovUKPayApiClient.Api
         /// </remarks>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">Payment identifier</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task CaptureAPaymentAsync(string paymentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task CaptureAPaymentAsync(string paymentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Capture payment
@@ -228,9 +243,10 @@ namespace GovUKPayApiClient.Api
         /// </remarks>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">Payment identifier</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> CaptureAPaymentWithHttpInfoAsync(string paymentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> CaptureAPaymentWithHttpInfoAsync(string paymentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create new payment
         /// </summary>
@@ -239,9 +255,10 @@ namespace GovUKPayApiClient.Api
         /// </remarks>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCardPaymentRequest">requestPayload</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CreatePaymentResult</returns>
-        System.Threading.Tasks.Task<CreatePaymentResult> CreateAPaymentAsync(CreateCardPaymentRequest createCardPaymentRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CreatePaymentResult> CreateAPaymentAsync(CreateCardPaymentRequest createCardPaymentRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create new payment
@@ -251,9 +268,10 @@ namespace GovUKPayApiClient.Api
         /// </remarks>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCardPaymentRequest">requestPayload</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CreatePaymentResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreatePaymentResult>> CreateAPaymentWithHttpInfoAsync(CreateCardPaymentRequest createCardPaymentRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CreatePaymentResult>> CreateAPaymentWithHttpInfoAsync(CreateCardPaymentRequest createCardPaymentRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Find payment by ID
         /// </summary>
@@ -262,9 +280,10 @@ namespace GovUKPayApiClient.Api
         /// </remarks>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">Payment identifier</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetPaymentResult</returns>
-        System.Threading.Tasks.Task<GetPaymentResult> GetAPaymentAsync(string paymentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetPaymentResult> GetAPaymentAsync(string paymentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Find payment by ID
@@ -274,9 +293,10 @@ namespace GovUKPayApiClient.Api
         /// </remarks>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">Payment identifier</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetPaymentResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetPaymentResult>> GetAPaymentWithHttpInfoAsync(string paymentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetPaymentResult>> GetAPaymentWithHttpInfoAsync(string paymentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Return payment events by ID
         /// </summary>
@@ -285,9 +305,10 @@ namespace GovUKPayApiClient.Api
         /// </remarks>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">Payment identifier</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PaymentEvents</returns>
-        System.Threading.Tasks.Task<PaymentEvents> GetEventsForAPaymentAsync(string paymentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PaymentEvents> GetEventsForAPaymentAsync(string paymentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Return payment events by ID
@@ -297,9 +318,10 @@ namespace GovUKPayApiClient.Api
         /// </remarks>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">Payment identifier</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PaymentEvents)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PaymentEvents>> GetEventsForAPaymentWithHttpInfoAsync(string paymentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PaymentEvents>> GetEventsForAPaymentWithHttpInfoAsync(string paymentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Search payments
         /// </summary>
@@ -320,9 +342,10 @@ namespace GovUKPayApiClient.Api
         /// <param name="lastDigitsCardNumber">Last four digits of the card used to make payment (optional)</param>
         /// <param name="fromSettledDate">From settled date of payment to be searched (this date is inclusive). Example&#x3D;2015-08-13 (optional)</param>
         /// <param name="toSettledDate">To settled date of payment to be searched (this date is inclusive). Example&#x3D;2015-08-14 (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PaymentSearchResults</returns>
-        System.Threading.Tasks.Task<PaymentSearchResults> SearchPaymentsAsync(string reference = default(string), string email = default(string), string state = default(string), string cardBrand = default(string), string fromDate = default(string), string toDate = default(string), string page = default(string), string displaySize = default(string), string cardholderName = default(string), string firstDigitsCardNumber = default(string), string lastDigitsCardNumber = default(string), string fromSettledDate = default(string), string toSettledDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PaymentSearchResults> SearchPaymentsAsync(string reference = default(string), string email = default(string), string state = default(string), string cardBrand = default(string), string fromDate = default(string), string toDate = default(string), string page = default(string), string displaySize = default(string), string cardholderName = default(string), string firstDigitsCardNumber = default(string), string lastDigitsCardNumber = default(string), string fromSettledDate = default(string), string toSettledDate = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Search payments
@@ -344,9 +367,10 @@ namespace GovUKPayApiClient.Api
         /// <param name="lastDigitsCardNumber">Last four digits of the card used to make payment (optional)</param>
         /// <param name="fromSettledDate">From settled date of payment to be searched (this date is inclusive). Example&#x3D;2015-08-13 (optional)</param>
         /// <param name="toSettledDate">To settled date of payment to be searched (this date is inclusive). Example&#x3D;2015-08-14 (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PaymentSearchResults)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PaymentSearchResults>> SearchPaymentsWithHttpInfoAsync(string reference = default(string), string email = default(string), string state = default(string), string cardBrand = default(string), string fromDate = default(string), string toDate = default(string), string page = default(string), string displaySize = default(string), string cardholderName = default(string), string firstDigitsCardNumber = default(string), string lastDigitsCardNumber = default(string), string fromSettledDate = default(string), string toSettledDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PaymentSearchResults>> SearchPaymentsWithHttpInfoAsync(string reference = default(string), string email = default(string), string state = default(string), string cardBrand = default(string), string fromDate = default(string), string toDate = default(string), string page = default(string), string displaySize = default(string), string cardholderName = default(string), string firstDigitsCardNumber = default(string), string lastDigitsCardNumber = default(string), string fromSettledDate = default(string), string toSettledDate = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -472,8 +496,9 @@ namespace GovUKPayApiClient.Api
         /// </summary>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">Payment identifier</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void CancelAPayment(string paymentId)
+        public void CancelAPayment(string paymentId, int operationIndex = 0)
         {
             CancelAPaymentWithHttpInfo(paymentId);
         }
@@ -483,8 +508,9 @@ namespace GovUKPayApiClient.Api
         /// </summary>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">Payment identifier</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public GovUKPayApiClient.Client.ApiResponse<Object> CancelAPaymentWithHttpInfo(string paymentId)
+        public GovUKPayApiClient.Client.ApiResponse<Object> CancelAPaymentWithHttpInfo(string paymentId, int operationIndex = 0)
         {
             // verify the required parameter 'paymentId' is set
             if (paymentId == null)
@@ -515,6 +541,9 @@ namespace GovUKPayApiClient.Api
             }
 
             localVarRequestOptions.PathParameters.Add("paymentId", GovUKPayApiClient.Client.ClientUtils.ParameterToString(paymentId)); // path parameter
+
+            localVarRequestOptions.Operation = "CardPaymentsApi.CancelAPayment";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (BearerAuth) required
             // bearer authentication required
@@ -542,11 +571,12 @@ namespace GovUKPayApiClient.Api
         /// </summary>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">Payment identifier</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task CancelAPaymentAsync(string paymentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task CancelAPaymentAsync(string paymentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await CancelAPaymentWithHttpInfoAsync(paymentId, cancellationToken).ConfigureAwait(false);
+            await CancelAPaymentWithHttpInfoAsync(paymentId, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -554,9 +584,10 @@ namespace GovUKPayApiClient.Api
         /// </summary>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">Payment identifier</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<GovUKPayApiClient.Client.ApiResponse<Object>> CancelAPaymentWithHttpInfoAsync(string paymentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GovUKPayApiClient.Client.ApiResponse<Object>> CancelAPaymentWithHttpInfoAsync(string paymentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'paymentId' is set
             if (paymentId == null)
@@ -588,6 +619,9 @@ namespace GovUKPayApiClient.Api
             }
 
             localVarRequestOptions.PathParameters.Add("paymentId", GovUKPayApiClient.Client.ClientUtils.ParameterToString(paymentId)); // path parameter
+
+            localVarRequestOptions.Operation = "CardPaymentsApi.CancelAPayment";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (BearerAuth) required
             // bearer authentication required
@@ -616,8 +650,9 @@ namespace GovUKPayApiClient.Api
         /// </summary>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">Payment identifier</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void CaptureAPayment(string paymentId)
+        public void CaptureAPayment(string paymentId, int operationIndex = 0)
         {
             CaptureAPaymentWithHttpInfo(paymentId);
         }
@@ -627,8 +662,9 @@ namespace GovUKPayApiClient.Api
         /// </summary>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">Payment identifier</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public GovUKPayApiClient.Client.ApiResponse<Object> CaptureAPaymentWithHttpInfo(string paymentId)
+        public GovUKPayApiClient.Client.ApiResponse<Object> CaptureAPaymentWithHttpInfo(string paymentId, int operationIndex = 0)
         {
             // verify the required parameter 'paymentId' is set
             if (paymentId == null)
@@ -659,6 +695,9 @@ namespace GovUKPayApiClient.Api
             }
 
             localVarRequestOptions.PathParameters.Add("paymentId", GovUKPayApiClient.Client.ClientUtils.ParameterToString(paymentId)); // path parameter
+
+            localVarRequestOptions.Operation = "CardPaymentsApi.CaptureAPayment";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (BearerAuth) required
             // bearer authentication required
@@ -686,11 +725,12 @@ namespace GovUKPayApiClient.Api
         /// </summary>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">Payment identifier</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task CaptureAPaymentAsync(string paymentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task CaptureAPaymentAsync(string paymentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await CaptureAPaymentWithHttpInfoAsync(paymentId, cancellationToken).ConfigureAwait(false);
+            await CaptureAPaymentWithHttpInfoAsync(paymentId, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -698,9 +738,10 @@ namespace GovUKPayApiClient.Api
         /// </summary>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">Payment identifier</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<GovUKPayApiClient.Client.ApiResponse<Object>> CaptureAPaymentWithHttpInfoAsync(string paymentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GovUKPayApiClient.Client.ApiResponse<Object>> CaptureAPaymentWithHttpInfoAsync(string paymentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'paymentId' is set
             if (paymentId == null)
@@ -732,6 +773,9 @@ namespace GovUKPayApiClient.Api
             }
 
             localVarRequestOptions.PathParameters.Add("paymentId", GovUKPayApiClient.Client.ClientUtils.ParameterToString(paymentId)); // path parameter
+
+            localVarRequestOptions.Operation = "CardPaymentsApi.CaptureAPayment";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (BearerAuth) required
             // bearer authentication required
@@ -760,8 +804,9 @@ namespace GovUKPayApiClient.Api
         /// </summary>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCardPaymentRequest">requestPayload</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CreatePaymentResult</returns>
-        public CreatePaymentResult CreateAPayment(CreateCardPaymentRequest createCardPaymentRequest)
+        public CreatePaymentResult CreateAPayment(CreateCardPaymentRequest createCardPaymentRequest, int operationIndex = 0)
         {
             GovUKPayApiClient.Client.ApiResponse<CreatePaymentResult> localVarResponse = CreateAPaymentWithHttpInfo(createCardPaymentRequest);
             return localVarResponse.Data;
@@ -772,8 +817,9 @@ namespace GovUKPayApiClient.Api
         /// </summary>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCardPaymentRequest">requestPayload</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CreatePaymentResult</returns>
-        public GovUKPayApiClient.Client.ApiResponse<CreatePaymentResult> CreateAPaymentWithHttpInfo(CreateCardPaymentRequest createCardPaymentRequest)
+        public GovUKPayApiClient.Client.ApiResponse<CreatePaymentResult> CreateAPaymentWithHttpInfo(CreateCardPaymentRequest createCardPaymentRequest, int operationIndex = 0)
         {
             // verify the required parameter 'createCardPaymentRequest' is set
             if (createCardPaymentRequest == null)
@@ -805,6 +851,9 @@ namespace GovUKPayApiClient.Api
             }
 
             localVarRequestOptions.Data = createCardPaymentRequest;
+
+            localVarRequestOptions.Operation = "CardPaymentsApi.CreateAPayment";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (BearerAuth) required
             // bearer authentication required
@@ -832,11 +881,12 @@ namespace GovUKPayApiClient.Api
         /// </summary>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCardPaymentRequest">requestPayload</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CreatePaymentResult</returns>
-        public async System.Threading.Tasks.Task<CreatePaymentResult> CreateAPaymentAsync(CreateCardPaymentRequest createCardPaymentRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CreatePaymentResult> CreateAPaymentAsync(CreateCardPaymentRequest createCardPaymentRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            GovUKPayApiClient.Client.ApiResponse<CreatePaymentResult> localVarResponse = await CreateAPaymentWithHttpInfoAsync(createCardPaymentRequest, cancellationToken).ConfigureAwait(false);
+            GovUKPayApiClient.Client.ApiResponse<CreatePaymentResult> localVarResponse = await CreateAPaymentWithHttpInfoAsync(createCardPaymentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -845,9 +895,10 @@ namespace GovUKPayApiClient.Api
         /// </summary>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCardPaymentRequest">requestPayload</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CreatePaymentResult)</returns>
-        public async System.Threading.Tasks.Task<GovUKPayApiClient.Client.ApiResponse<CreatePaymentResult>> CreateAPaymentWithHttpInfoAsync(CreateCardPaymentRequest createCardPaymentRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GovUKPayApiClient.Client.ApiResponse<CreatePaymentResult>> CreateAPaymentWithHttpInfoAsync(CreateCardPaymentRequest createCardPaymentRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'createCardPaymentRequest' is set
             if (createCardPaymentRequest == null)
@@ -880,6 +931,9 @@ namespace GovUKPayApiClient.Api
             }
 
             localVarRequestOptions.Data = createCardPaymentRequest;
+
+            localVarRequestOptions.Operation = "CardPaymentsApi.CreateAPayment";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (BearerAuth) required
             // bearer authentication required
@@ -908,8 +962,9 @@ namespace GovUKPayApiClient.Api
         /// </summary>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">Payment identifier</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetPaymentResult</returns>
-        public GetPaymentResult GetAPayment(string paymentId)
+        public GetPaymentResult GetAPayment(string paymentId, int operationIndex = 0)
         {
             GovUKPayApiClient.Client.ApiResponse<GetPaymentResult> localVarResponse = GetAPaymentWithHttpInfo(paymentId);
             return localVarResponse.Data;
@@ -920,8 +975,9 @@ namespace GovUKPayApiClient.Api
         /// </summary>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">Payment identifier</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetPaymentResult</returns>
-        public GovUKPayApiClient.Client.ApiResponse<GetPaymentResult> GetAPaymentWithHttpInfo(string paymentId)
+        public GovUKPayApiClient.Client.ApiResponse<GetPaymentResult> GetAPaymentWithHttpInfo(string paymentId, int operationIndex = 0)
         {
             // verify the required parameter 'paymentId' is set
             if (paymentId == null)
@@ -952,6 +1008,9 @@ namespace GovUKPayApiClient.Api
             }
 
             localVarRequestOptions.PathParameters.Add("paymentId", GovUKPayApiClient.Client.ClientUtils.ParameterToString(paymentId)); // path parameter
+
+            localVarRequestOptions.Operation = "CardPaymentsApi.GetAPayment";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (BearerAuth) required
             // bearer authentication required
@@ -979,11 +1038,12 @@ namespace GovUKPayApiClient.Api
         /// </summary>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">Payment identifier</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetPaymentResult</returns>
-        public async System.Threading.Tasks.Task<GetPaymentResult> GetAPaymentAsync(string paymentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetPaymentResult> GetAPaymentAsync(string paymentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            GovUKPayApiClient.Client.ApiResponse<GetPaymentResult> localVarResponse = await GetAPaymentWithHttpInfoAsync(paymentId, cancellationToken).ConfigureAwait(false);
+            GovUKPayApiClient.Client.ApiResponse<GetPaymentResult> localVarResponse = await GetAPaymentWithHttpInfoAsync(paymentId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -992,9 +1052,10 @@ namespace GovUKPayApiClient.Api
         /// </summary>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">Payment identifier</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetPaymentResult)</returns>
-        public async System.Threading.Tasks.Task<GovUKPayApiClient.Client.ApiResponse<GetPaymentResult>> GetAPaymentWithHttpInfoAsync(string paymentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GovUKPayApiClient.Client.ApiResponse<GetPaymentResult>> GetAPaymentWithHttpInfoAsync(string paymentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'paymentId' is set
             if (paymentId == null)
@@ -1026,6 +1087,9 @@ namespace GovUKPayApiClient.Api
             }
 
             localVarRequestOptions.PathParameters.Add("paymentId", GovUKPayApiClient.Client.ClientUtils.ParameterToString(paymentId)); // path parameter
+
+            localVarRequestOptions.Operation = "CardPaymentsApi.GetAPayment";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (BearerAuth) required
             // bearer authentication required
@@ -1054,8 +1118,9 @@ namespace GovUKPayApiClient.Api
         /// </summary>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">Payment identifier</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PaymentEvents</returns>
-        public PaymentEvents GetEventsForAPayment(string paymentId)
+        public PaymentEvents GetEventsForAPayment(string paymentId, int operationIndex = 0)
         {
             GovUKPayApiClient.Client.ApiResponse<PaymentEvents> localVarResponse = GetEventsForAPaymentWithHttpInfo(paymentId);
             return localVarResponse.Data;
@@ -1066,8 +1131,9 @@ namespace GovUKPayApiClient.Api
         /// </summary>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">Payment identifier</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PaymentEvents</returns>
-        public GovUKPayApiClient.Client.ApiResponse<PaymentEvents> GetEventsForAPaymentWithHttpInfo(string paymentId)
+        public GovUKPayApiClient.Client.ApiResponse<PaymentEvents> GetEventsForAPaymentWithHttpInfo(string paymentId, int operationIndex = 0)
         {
             // verify the required parameter 'paymentId' is set
             if (paymentId == null)
@@ -1098,6 +1164,9 @@ namespace GovUKPayApiClient.Api
             }
 
             localVarRequestOptions.PathParameters.Add("paymentId", GovUKPayApiClient.Client.ClientUtils.ParameterToString(paymentId)); // path parameter
+
+            localVarRequestOptions.Operation = "CardPaymentsApi.GetEventsForAPayment";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (BearerAuth) required
             // bearer authentication required
@@ -1125,11 +1194,12 @@ namespace GovUKPayApiClient.Api
         /// </summary>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">Payment identifier</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PaymentEvents</returns>
-        public async System.Threading.Tasks.Task<PaymentEvents> GetEventsForAPaymentAsync(string paymentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PaymentEvents> GetEventsForAPaymentAsync(string paymentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            GovUKPayApiClient.Client.ApiResponse<PaymentEvents> localVarResponse = await GetEventsForAPaymentWithHttpInfoAsync(paymentId, cancellationToken).ConfigureAwait(false);
+            GovUKPayApiClient.Client.ApiResponse<PaymentEvents> localVarResponse = await GetEventsForAPaymentWithHttpInfoAsync(paymentId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1138,9 +1208,10 @@ namespace GovUKPayApiClient.Api
         /// </summary>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId">Payment identifier</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PaymentEvents)</returns>
-        public async System.Threading.Tasks.Task<GovUKPayApiClient.Client.ApiResponse<PaymentEvents>> GetEventsForAPaymentWithHttpInfoAsync(string paymentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GovUKPayApiClient.Client.ApiResponse<PaymentEvents>> GetEventsForAPaymentWithHttpInfoAsync(string paymentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'paymentId' is set
             if (paymentId == null)
@@ -1172,6 +1243,9 @@ namespace GovUKPayApiClient.Api
             }
 
             localVarRequestOptions.PathParameters.Add("paymentId", GovUKPayApiClient.Client.ClientUtils.ParameterToString(paymentId)); // path parameter
+
+            localVarRequestOptions.Operation = "CardPaymentsApi.GetEventsForAPayment";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (BearerAuth) required
             // bearer authentication required
@@ -1212,8 +1286,9 @@ namespace GovUKPayApiClient.Api
         /// <param name="lastDigitsCardNumber">Last four digits of the card used to make payment (optional)</param>
         /// <param name="fromSettledDate">From settled date of payment to be searched (this date is inclusive). Example&#x3D;2015-08-13 (optional)</param>
         /// <param name="toSettledDate">To settled date of payment to be searched (this date is inclusive). Example&#x3D;2015-08-14 (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PaymentSearchResults</returns>
-        public PaymentSearchResults SearchPayments(string reference = default(string), string email = default(string), string state = default(string), string cardBrand = default(string), string fromDate = default(string), string toDate = default(string), string page = default(string), string displaySize = default(string), string cardholderName = default(string), string firstDigitsCardNumber = default(string), string lastDigitsCardNumber = default(string), string fromSettledDate = default(string), string toSettledDate = default(string))
+        public PaymentSearchResults SearchPayments(string reference = default(string), string email = default(string), string state = default(string), string cardBrand = default(string), string fromDate = default(string), string toDate = default(string), string page = default(string), string displaySize = default(string), string cardholderName = default(string), string firstDigitsCardNumber = default(string), string lastDigitsCardNumber = default(string), string fromSettledDate = default(string), string toSettledDate = default(string), int operationIndex = 0)
         {
             GovUKPayApiClient.Client.ApiResponse<PaymentSearchResults> localVarResponse = SearchPaymentsWithHttpInfo(reference, email, state, cardBrand, fromDate, toDate, page, displaySize, cardholderName, firstDigitsCardNumber, lastDigitsCardNumber, fromSettledDate, toSettledDate);
             return localVarResponse.Data;
@@ -1236,8 +1311,9 @@ namespace GovUKPayApiClient.Api
         /// <param name="lastDigitsCardNumber">Last four digits of the card used to make payment (optional)</param>
         /// <param name="fromSettledDate">From settled date of payment to be searched (this date is inclusive). Example&#x3D;2015-08-13 (optional)</param>
         /// <param name="toSettledDate">To settled date of payment to be searched (this date is inclusive). Example&#x3D;2015-08-14 (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PaymentSearchResults</returns>
-        public GovUKPayApiClient.Client.ApiResponse<PaymentSearchResults> SearchPaymentsWithHttpInfo(string reference = default(string), string email = default(string), string state = default(string), string cardBrand = default(string), string fromDate = default(string), string toDate = default(string), string page = default(string), string displaySize = default(string), string cardholderName = default(string), string firstDigitsCardNumber = default(string), string lastDigitsCardNumber = default(string), string fromSettledDate = default(string), string toSettledDate = default(string))
+        public GovUKPayApiClient.Client.ApiResponse<PaymentSearchResults> SearchPaymentsWithHttpInfo(string reference = default(string), string email = default(string), string state = default(string), string cardBrand = default(string), string fromDate = default(string), string toDate = default(string), string page = default(string), string displaySize = default(string), string cardholderName = default(string), string firstDigitsCardNumber = default(string), string lastDigitsCardNumber = default(string), string fromSettledDate = default(string), string toSettledDate = default(string), int operationIndex = 0)
         {
             GovUKPayApiClient.Client.RequestOptions localVarRequestOptions = new GovUKPayApiClient.Client.RequestOptions();
 
@@ -1313,6 +1389,9 @@ namespace GovUKPayApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(GovUKPayApiClient.Client.ClientUtils.ParameterToMultiMap("", "to_settled_date", toSettledDate));
             }
+
+            localVarRequestOptions.Operation = "CardPaymentsApi.SearchPayments";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (BearerAuth) required
             // bearer authentication required
@@ -1352,11 +1431,12 @@ namespace GovUKPayApiClient.Api
         /// <param name="lastDigitsCardNumber">Last four digits of the card used to make payment (optional)</param>
         /// <param name="fromSettledDate">From settled date of payment to be searched (this date is inclusive). Example&#x3D;2015-08-13 (optional)</param>
         /// <param name="toSettledDate">To settled date of payment to be searched (this date is inclusive). Example&#x3D;2015-08-14 (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PaymentSearchResults</returns>
-        public async System.Threading.Tasks.Task<PaymentSearchResults> SearchPaymentsAsync(string reference = default(string), string email = default(string), string state = default(string), string cardBrand = default(string), string fromDate = default(string), string toDate = default(string), string page = default(string), string displaySize = default(string), string cardholderName = default(string), string firstDigitsCardNumber = default(string), string lastDigitsCardNumber = default(string), string fromSettledDate = default(string), string toSettledDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PaymentSearchResults> SearchPaymentsAsync(string reference = default(string), string email = default(string), string state = default(string), string cardBrand = default(string), string fromDate = default(string), string toDate = default(string), string page = default(string), string displaySize = default(string), string cardholderName = default(string), string firstDigitsCardNumber = default(string), string lastDigitsCardNumber = default(string), string fromSettledDate = default(string), string toSettledDate = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            GovUKPayApiClient.Client.ApiResponse<PaymentSearchResults> localVarResponse = await SearchPaymentsWithHttpInfoAsync(reference, email, state, cardBrand, fromDate, toDate, page, displaySize, cardholderName, firstDigitsCardNumber, lastDigitsCardNumber, fromSettledDate, toSettledDate, cancellationToken).ConfigureAwait(false);
+            GovUKPayApiClient.Client.ApiResponse<PaymentSearchResults> localVarResponse = await SearchPaymentsWithHttpInfoAsync(reference, email, state, cardBrand, fromDate, toDate, page, displaySize, cardholderName, firstDigitsCardNumber, lastDigitsCardNumber, fromSettledDate, toSettledDate, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1377,9 +1457,10 @@ namespace GovUKPayApiClient.Api
         /// <param name="lastDigitsCardNumber">Last four digits of the card used to make payment (optional)</param>
         /// <param name="fromSettledDate">From settled date of payment to be searched (this date is inclusive). Example&#x3D;2015-08-13 (optional)</param>
         /// <param name="toSettledDate">To settled date of payment to be searched (this date is inclusive). Example&#x3D;2015-08-14 (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PaymentSearchResults)</returns>
-        public async System.Threading.Tasks.Task<GovUKPayApiClient.Client.ApiResponse<PaymentSearchResults>> SearchPaymentsWithHttpInfoAsync(string reference = default(string), string email = default(string), string state = default(string), string cardBrand = default(string), string fromDate = default(string), string toDate = default(string), string page = default(string), string displaySize = default(string), string cardholderName = default(string), string firstDigitsCardNumber = default(string), string lastDigitsCardNumber = default(string), string fromSettledDate = default(string), string toSettledDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GovUKPayApiClient.Client.ApiResponse<PaymentSearchResults>> SearchPaymentsWithHttpInfoAsync(string reference = default(string), string email = default(string), string state = default(string), string cardBrand = default(string), string fromDate = default(string), string toDate = default(string), string page = default(string), string displaySize = default(string), string cardholderName = default(string), string firstDigitsCardNumber = default(string), string lastDigitsCardNumber = default(string), string fromSettledDate = default(string), string toSettledDate = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             GovUKPayApiClient.Client.RequestOptions localVarRequestOptions = new GovUKPayApiClient.Client.RequestOptions();
@@ -1456,6 +1537,9 @@ namespace GovUKPayApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(GovUKPayApiClient.Client.ClientUtils.ParameterToMultiMap("", "to_settled_date", toSettledDate));
             }
+
+            localVarRequestOptions.Operation = "CardPaymentsApi.SearchPayments";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (BearerAuth) required
             // bearer authentication required

@@ -40,9 +40,11 @@ namespace GovUKPayApiClient.Model
         /// Initializes a new instance of the <see cref="PaymentRefundRequest" /> class.
         /// </summary>
         /// <param name="amount">Amount in pence. Can&#39;t be more than the available amount for refunds (required).</param>
-        public PaymentRefundRequest(int amount = default(int))
+        /// <param name="refundAmountAvailable">Amount in pence. Total amount still available before issuing the refund.</param>
+        public PaymentRefundRequest(int amount = default(int), int refundAmountAvailable = default(int))
         {
             this.Amount = amount;
+            this.RefundAmountAvailable = refundAmountAvailable;
         }
 
         /// <summary>
@@ -57,16 +59,8 @@ namespace GovUKPayApiClient.Model
         /// </summary>
         /// <value>Amount in pence. Total amount still available before issuing the refund</value>
         [DataMember(Name = "refund_amount_available", EmitDefaultValue = false)]
-        public int RefundAmountAvailable { get; private set; }
+        public int RefundAmountAvailable { get; set; }
 
-        /// <summary>
-        /// Returns false as RefundAmountAvailable should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeRefundAmountAvailable()
-        {
-            return false;
-        }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

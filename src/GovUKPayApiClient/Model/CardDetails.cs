@@ -32,31 +32,37 @@ namespace GovUKPayApiClient.Model
     public partial class CardDetails : IEquatable<CardDetails>, IValidatableObject
     {
         /// <summary>
-        /// The card type, &#x60;credit&#x60; or &#x60;null&#x60; if not able to determine
+        /// The card type, &#x60;debit&#x60; or &#x60;credit&#x60; or &#x60;null&#x60; if not able to determine
         /// </summary>
-        /// <value>The card type, &#x60;credit&#x60; or &#x60;null&#x60; if not able to determine</value>
+        /// <value>The card type, &#x60;debit&#x60; or &#x60;credit&#x60; or &#x60;null&#x60; if not able to determine</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum CardTypeEnum
         {
             /// <summary>
+            /// Enum Debit for value: debit
+            /// </summary>
+            [EnumMember(Value = "debit")]
+            Debit = 1,
+
+            /// <summary>
             /// Enum Credit for value: credit
             /// </summary>
             [EnumMember(Value = "credit")]
-            Credit = 1,
+            Credit = 2,
 
             /// <summary>
             /// Enum Null for value: null
             /// </summary>
             [EnumMember(Value = "null")]
-            Null = 2
+            Null = 3
 
         }
 
 
         /// <summary>
-        /// The card type, &#x60;credit&#x60; or &#x60;null&#x60; if not able to determine
+        /// The card type, &#x60;debit&#x60; or &#x60;credit&#x60; or &#x60;null&#x60; if not able to determine
         /// </summary>
-        /// <value>The card type, &#x60;credit&#x60; or &#x60;null&#x60; if not able to determine</value>
+        /// <value>The card type, &#x60;debit&#x60; or &#x60;credit&#x60; or &#x60;null&#x60; if not able to determine</value>
         [DataMember(Name = "card_type", EmitDefaultValue = false)]
         public CardTypeEnum? CardType { get; set; }
 

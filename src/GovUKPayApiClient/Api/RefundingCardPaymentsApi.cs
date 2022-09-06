@@ -35,8 +35,9 @@ namespace GovUKPayApiClient.Api
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId"></param>
         /// <param name="refundId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Refund</returns>
-        Refund GetAPaymentRefund(string paymentId, string refundId);
+        Refund GetAPaymentRefund(string paymentId, string refundId, int operationIndex = 0);
 
         /// <summary>
         /// Find payment refund by ID
@@ -47,8 +48,9 @@ namespace GovUKPayApiClient.Api
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId"></param>
         /// <param name="refundId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Refund</returns>
-        ApiResponse<Refund> GetAPaymentRefundWithHttpInfo(string paymentId, string refundId);
+        ApiResponse<Refund> GetAPaymentRefundWithHttpInfo(string paymentId, string refundId, int operationIndex = 0);
         /// <summary>
         /// Get all refunds for a payment
         /// </summary>
@@ -57,8 +59,9 @@ namespace GovUKPayApiClient.Api
         /// </remarks>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RefundForSearchResult</returns>
-        RefundForSearchResult GetAllRefundsForAPayment(string paymentId);
+        RefundForSearchResult GetAllRefundsForAPayment(string paymentId, int operationIndex = 0);
 
         /// <summary>
         /// Get all refunds for a payment
@@ -68,8 +71,9 @@ namespace GovUKPayApiClient.Api
         /// </remarks>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RefundForSearchResult</returns>
-        ApiResponse<RefundForSearchResult> GetAllRefundsForAPaymentWithHttpInfo(string paymentId);
+        ApiResponse<RefundForSearchResult> GetAllRefundsForAPaymentWithHttpInfo(string paymentId, int operationIndex = 0);
         /// <summary>
         /// Search refunds
         /// </summary>
@@ -83,8 +87,9 @@ namespace GovUKPayApiClient.Api
         /// <param name="toSettledDate">To settled date of refund to be searched (this date is inclusive). Example&#x3D;2015-08-13 (optional)</param>
         /// <param name="page">Page number requested for the search, should be a positive integer (optional, defaults to 1) (optional)</param>
         /// <param name="displaySize">Number of results to be shown per page, should be a positive integer (optional, defaults to 500, max 500) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RefundSearchResults</returns>
-        RefundSearchResults SearchRefunds(string fromDate = default(string), string toDate = default(string), string fromSettledDate = default(string), string toSettledDate = default(string), string page = default(string), string displaySize = default(string));
+        RefundSearchResults SearchRefunds(string fromDate = default(string), string toDate = default(string), string fromSettledDate = default(string), string toSettledDate = default(string), string page = default(string), string displaySize = default(string), int operationIndex = 0);
 
         /// <summary>
         /// Search refunds
@@ -99,8 +104,9 @@ namespace GovUKPayApiClient.Api
         /// <param name="toSettledDate">To settled date of refund to be searched (this date is inclusive). Example&#x3D;2015-08-13 (optional)</param>
         /// <param name="page">Page number requested for the search, should be a positive integer (optional, defaults to 1) (optional)</param>
         /// <param name="displaySize">Number of results to be shown per page, should be a positive integer (optional, defaults to 500, max 500) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RefundSearchResults</returns>
-        ApiResponse<RefundSearchResults> SearchRefundsWithHttpInfo(string fromDate = default(string), string toDate = default(string), string fromSettledDate = default(string), string toSettledDate = default(string), string page = default(string), string displaySize = default(string));
+        ApiResponse<RefundSearchResults> SearchRefundsWithHttpInfo(string fromDate = default(string), string toDate = default(string), string fromSettledDate = default(string), string toSettledDate = default(string), string page = default(string), string displaySize = default(string), int operationIndex = 0);
         /// <summary>
         /// Submit a refund for a payment
         /// </summary>
@@ -110,8 +116,9 @@ namespace GovUKPayApiClient.Api
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId"></param>
         /// <param name="paymentRefundRequest">requestPayload</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Refund</returns>
-        Refund SubmitARefundForAPayment(string paymentId, PaymentRefundRequest paymentRefundRequest);
+        Refund SubmitARefundForAPayment(string paymentId, PaymentRefundRequest paymentRefundRequest, int operationIndex = 0);
 
         /// <summary>
         /// Submit a refund for a payment
@@ -122,8 +129,9 @@ namespace GovUKPayApiClient.Api
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId"></param>
         /// <param name="paymentRefundRequest">requestPayload</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Refund</returns>
-        ApiResponse<Refund> SubmitARefundForAPaymentWithHttpInfo(string paymentId, PaymentRefundRequest paymentRefundRequest);
+        ApiResponse<Refund> SubmitARefundForAPaymentWithHttpInfo(string paymentId, PaymentRefundRequest paymentRefundRequest, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -142,9 +150,10 @@ namespace GovUKPayApiClient.Api
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId"></param>
         /// <param name="refundId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Refund</returns>
-        System.Threading.Tasks.Task<Refund> GetAPaymentRefundAsync(string paymentId, string refundId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Refund> GetAPaymentRefundAsync(string paymentId, string refundId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Find payment refund by ID
@@ -155,9 +164,10 @@ namespace GovUKPayApiClient.Api
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId"></param>
         /// <param name="refundId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Refund)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Refund>> GetAPaymentRefundWithHttpInfoAsync(string paymentId, string refundId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Refund>> GetAPaymentRefundWithHttpInfoAsync(string paymentId, string refundId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get all refunds for a payment
         /// </summary>
@@ -166,9 +176,10 @@ namespace GovUKPayApiClient.Api
         /// </remarks>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RefundForSearchResult</returns>
-        System.Threading.Tasks.Task<RefundForSearchResult> GetAllRefundsForAPaymentAsync(string paymentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<RefundForSearchResult> GetAllRefundsForAPaymentAsync(string paymentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get all refunds for a payment
@@ -178,9 +189,10 @@ namespace GovUKPayApiClient.Api
         /// </remarks>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RefundForSearchResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RefundForSearchResult>> GetAllRefundsForAPaymentWithHttpInfoAsync(string paymentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<RefundForSearchResult>> GetAllRefundsForAPaymentWithHttpInfoAsync(string paymentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Search refunds
         /// </summary>
@@ -194,9 +206,10 @@ namespace GovUKPayApiClient.Api
         /// <param name="toSettledDate">To settled date of refund to be searched (this date is inclusive). Example&#x3D;2015-08-13 (optional)</param>
         /// <param name="page">Page number requested for the search, should be a positive integer (optional, defaults to 1) (optional)</param>
         /// <param name="displaySize">Number of results to be shown per page, should be a positive integer (optional, defaults to 500, max 500) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RefundSearchResults</returns>
-        System.Threading.Tasks.Task<RefundSearchResults> SearchRefundsAsync(string fromDate = default(string), string toDate = default(string), string fromSettledDate = default(string), string toSettledDate = default(string), string page = default(string), string displaySize = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<RefundSearchResults> SearchRefundsAsync(string fromDate = default(string), string toDate = default(string), string fromSettledDate = default(string), string toSettledDate = default(string), string page = default(string), string displaySize = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Search refunds
@@ -211,9 +224,10 @@ namespace GovUKPayApiClient.Api
         /// <param name="toSettledDate">To settled date of refund to be searched (this date is inclusive). Example&#x3D;2015-08-13 (optional)</param>
         /// <param name="page">Page number requested for the search, should be a positive integer (optional, defaults to 1) (optional)</param>
         /// <param name="displaySize">Number of results to be shown per page, should be a positive integer (optional, defaults to 500, max 500) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RefundSearchResults)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RefundSearchResults>> SearchRefundsWithHttpInfoAsync(string fromDate = default(string), string toDate = default(string), string fromSettledDate = default(string), string toSettledDate = default(string), string page = default(string), string displaySize = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<RefundSearchResults>> SearchRefundsWithHttpInfoAsync(string fromDate = default(string), string toDate = default(string), string fromSettledDate = default(string), string toSettledDate = default(string), string page = default(string), string displaySize = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Submit a refund for a payment
         /// </summary>
@@ -223,9 +237,10 @@ namespace GovUKPayApiClient.Api
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId"></param>
         /// <param name="paymentRefundRequest">requestPayload</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Refund</returns>
-        System.Threading.Tasks.Task<Refund> SubmitARefundForAPaymentAsync(string paymentId, PaymentRefundRequest paymentRefundRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Refund> SubmitARefundForAPaymentAsync(string paymentId, PaymentRefundRequest paymentRefundRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Submit a refund for a payment
@@ -236,9 +251,10 @@ namespace GovUKPayApiClient.Api
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId"></param>
         /// <param name="paymentRefundRequest">requestPayload</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Refund)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Refund>> SubmitARefundForAPaymentWithHttpInfoAsync(string paymentId, PaymentRefundRequest paymentRefundRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Refund>> SubmitARefundForAPaymentWithHttpInfoAsync(string paymentId, PaymentRefundRequest paymentRefundRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -365,8 +381,9 @@ namespace GovUKPayApiClient.Api
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId"></param>
         /// <param name="refundId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Refund</returns>
-        public Refund GetAPaymentRefund(string paymentId, string refundId)
+        public Refund GetAPaymentRefund(string paymentId, string refundId, int operationIndex = 0)
         {
             GovUKPayApiClient.Client.ApiResponse<Refund> localVarResponse = GetAPaymentRefundWithHttpInfo(paymentId, refundId);
             return localVarResponse.Data;
@@ -378,8 +395,9 @@ namespace GovUKPayApiClient.Api
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId"></param>
         /// <param name="refundId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Refund</returns>
-        public GovUKPayApiClient.Client.ApiResponse<Refund> GetAPaymentRefundWithHttpInfo(string paymentId, string refundId)
+        public GovUKPayApiClient.Client.ApiResponse<Refund> GetAPaymentRefundWithHttpInfo(string paymentId, string refundId, int operationIndex = 0)
         {
             // verify the required parameter 'paymentId' is set
             if (paymentId == null)
@@ -417,6 +435,9 @@ namespace GovUKPayApiClient.Api
 
             localVarRequestOptions.PathParameters.Add("paymentId", GovUKPayApiClient.Client.ClientUtils.ParameterToString(paymentId)); // path parameter
             localVarRequestOptions.PathParameters.Add("refundId", GovUKPayApiClient.Client.ClientUtils.ParameterToString(refundId)); // path parameter
+
+            localVarRequestOptions.Operation = "RefundingCardPaymentsApi.GetAPaymentRefund";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (BearerAuth) required
             // bearer authentication required
@@ -445,11 +466,12 @@ namespace GovUKPayApiClient.Api
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId"></param>
         /// <param name="refundId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Refund</returns>
-        public async System.Threading.Tasks.Task<Refund> GetAPaymentRefundAsync(string paymentId, string refundId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Refund> GetAPaymentRefundAsync(string paymentId, string refundId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            GovUKPayApiClient.Client.ApiResponse<Refund> localVarResponse = await GetAPaymentRefundWithHttpInfoAsync(paymentId, refundId, cancellationToken).ConfigureAwait(false);
+            GovUKPayApiClient.Client.ApiResponse<Refund> localVarResponse = await GetAPaymentRefundWithHttpInfoAsync(paymentId, refundId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -459,9 +481,10 @@ namespace GovUKPayApiClient.Api
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId"></param>
         /// <param name="refundId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Refund)</returns>
-        public async System.Threading.Tasks.Task<GovUKPayApiClient.Client.ApiResponse<Refund>> GetAPaymentRefundWithHttpInfoAsync(string paymentId, string refundId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GovUKPayApiClient.Client.ApiResponse<Refund>> GetAPaymentRefundWithHttpInfoAsync(string paymentId, string refundId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'paymentId' is set
             if (paymentId == null)
@@ -501,6 +524,9 @@ namespace GovUKPayApiClient.Api
             localVarRequestOptions.PathParameters.Add("paymentId", GovUKPayApiClient.Client.ClientUtils.ParameterToString(paymentId)); // path parameter
             localVarRequestOptions.PathParameters.Add("refundId", GovUKPayApiClient.Client.ClientUtils.ParameterToString(refundId)); // path parameter
 
+            localVarRequestOptions.Operation = "RefundingCardPaymentsApi.GetAPaymentRefund";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
             // authentication (BearerAuth) required
             // bearer authentication required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -528,8 +554,9 @@ namespace GovUKPayApiClient.Api
         /// </summary>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RefundForSearchResult</returns>
-        public RefundForSearchResult GetAllRefundsForAPayment(string paymentId)
+        public RefundForSearchResult GetAllRefundsForAPayment(string paymentId, int operationIndex = 0)
         {
             GovUKPayApiClient.Client.ApiResponse<RefundForSearchResult> localVarResponse = GetAllRefundsForAPaymentWithHttpInfo(paymentId);
             return localVarResponse.Data;
@@ -540,8 +567,9 @@ namespace GovUKPayApiClient.Api
         /// </summary>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RefundForSearchResult</returns>
-        public GovUKPayApiClient.Client.ApiResponse<RefundForSearchResult> GetAllRefundsForAPaymentWithHttpInfo(string paymentId)
+        public GovUKPayApiClient.Client.ApiResponse<RefundForSearchResult> GetAllRefundsForAPaymentWithHttpInfo(string paymentId, int operationIndex = 0)
         {
             // verify the required parameter 'paymentId' is set
             if (paymentId == null)
@@ -572,6 +600,9 @@ namespace GovUKPayApiClient.Api
             }
 
             localVarRequestOptions.PathParameters.Add("paymentId", GovUKPayApiClient.Client.ClientUtils.ParameterToString(paymentId)); // path parameter
+
+            localVarRequestOptions.Operation = "RefundingCardPaymentsApi.GetAllRefundsForAPayment";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (BearerAuth) required
             // bearer authentication required
@@ -599,11 +630,12 @@ namespace GovUKPayApiClient.Api
         /// </summary>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RefundForSearchResult</returns>
-        public async System.Threading.Tasks.Task<RefundForSearchResult> GetAllRefundsForAPaymentAsync(string paymentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<RefundForSearchResult> GetAllRefundsForAPaymentAsync(string paymentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            GovUKPayApiClient.Client.ApiResponse<RefundForSearchResult> localVarResponse = await GetAllRefundsForAPaymentWithHttpInfoAsync(paymentId, cancellationToken).ConfigureAwait(false);
+            GovUKPayApiClient.Client.ApiResponse<RefundForSearchResult> localVarResponse = await GetAllRefundsForAPaymentWithHttpInfoAsync(paymentId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -612,9 +644,10 @@ namespace GovUKPayApiClient.Api
         /// </summary>
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RefundForSearchResult)</returns>
-        public async System.Threading.Tasks.Task<GovUKPayApiClient.Client.ApiResponse<RefundForSearchResult>> GetAllRefundsForAPaymentWithHttpInfoAsync(string paymentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GovUKPayApiClient.Client.ApiResponse<RefundForSearchResult>> GetAllRefundsForAPaymentWithHttpInfoAsync(string paymentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'paymentId' is set
             if (paymentId == null)
@@ -646,6 +679,9 @@ namespace GovUKPayApiClient.Api
             }
 
             localVarRequestOptions.PathParameters.Add("paymentId", GovUKPayApiClient.Client.ClientUtils.ParameterToString(paymentId)); // path parameter
+
+            localVarRequestOptions.Operation = "RefundingCardPaymentsApi.GetAllRefundsForAPayment";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (BearerAuth) required
             // bearer authentication required
@@ -679,8 +715,9 @@ namespace GovUKPayApiClient.Api
         /// <param name="toSettledDate">To settled date of refund to be searched (this date is inclusive). Example&#x3D;2015-08-13 (optional)</param>
         /// <param name="page">Page number requested for the search, should be a positive integer (optional, defaults to 1) (optional)</param>
         /// <param name="displaySize">Number of results to be shown per page, should be a positive integer (optional, defaults to 500, max 500) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RefundSearchResults</returns>
-        public RefundSearchResults SearchRefunds(string fromDate = default(string), string toDate = default(string), string fromSettledDate = default(string), string toSettledDate = default(string), string page = default(string), string displaySize = default(string))
+        public RefundSearchResults SearchRefunds(string fromDate = default(string), string toDate = default(string), string fromSettledDate = default(string), string toSettledDate = default(string), string page = default(string), string displaySize = default(string), int operationIndex = 0)
         {
             GovUKPayApiClient.Client.ApiResponse<RefundSearchResults> localVarResponse = SearchRefundsWithHttpInfo(fromDate, toDate, fromSettledDate, toSettledDate, page, displaySize);
             return localVarResponse.Data;
@@ -696,8 +733,9 @@ namespace GovUKPayApiClient.Api
         /// <param name="toSettledDate">To settled date of refund to be searched (this date is inclusive). Example&#x3D;2015-08-13 (optional)</param>
         /// <param name="page">Page number requested for the search, should be a positive integer (optional, defaults to 1) (optional)</param>
         /// <param name="displaySize">Number of results to be shown per page, should be a positive integer (optional, defaults to 500, max 500) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RefundSearchResults</returns>
-        public GovUKPayApiClient.Client.ApiResponse<RefundSearchResults> SearchRefundsWithHttpInfo(string fromDate = default(string), string toDate = default(string), string fromSettledDate = default(string), string toSettledDate = default(string), string page = default(string), string displaySize = default(string))
+        public GovUKPayApiClient.Client.ApiResponse<RefundSearchResults> SearchRefundsWithHttpInfo(string fromDate = default(string), string toDate = default(string), string fromSettledDate = default(string), string toSettledDate = default(string), string page = default(string), string displaySize = default(string), int operationIndex = 0)
         {
             GovUKPayApiClient.Client.RequestOptions localVarRequestOptions = new GovUKPayApiClient.Client.RequestOptions();
 
@@ -745,6 +783,9 @@ namespace GovUKPayApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(GovUKPayApiClient.Client.ClientUtils.ParameterToMultiMap("", "display_size", displaySize));
             }
+
+            localVarRequestOptions.Operation = "RefundingCardPaymentsApi.SearchRefunds";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (BearerAuth) required
             // bearer authentication required
@@ -777,11 +818,12 @@ namespace GovUKPayApiClient.Api
         /// <param name="toSettledDate">To settled date of refund to be searched (this date is inclusive). Example&#x3D;2015-08-13 (optional)</param>
         /// <param name="page">Page number requested for the search, should be a positive integer (optional, defaults to 1) (optional)</param>
         /// <param name="displaySize">Number of results to be shown per page, should be a positive integer (optional, defaults to 500, max 500) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RefundSearchResults</returns>
-        public async System.Threading.Tasks.Task<RefundSearchResults> SearchRefundsAsync(string fromDate = default(string), string toDate = default(string), string fromSettledDate = default(string), string toSettledDate = default(string), string page = default(string), string displaySize = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<RefundSearchResults> SearchRefundsAsync(string fromDate = default(string), string toDate = default(string), string fromSettledDate = default(string), string toSettledDate = default(string), string page = default(string), string displaySize = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            GovUKPayApiClient.Client.ApiResponse<RefundSearchResults> localVarResponse = await SearchRefundsWithHttpInfoAsync(fromDate, toDate, fromSettledDate, toSettledDate, page, displaySize, cancellationToken).ConfigureAwait(false);
+            GovUKPayApiClient.Client.ApiResponse<RefundSearchResults> localVarResponse = await SearchRefundsWithHttpInfoAsync(fromDate, toDate, fromSettledDate, toSettledDate, page, displaySize, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -795,9 +837,10 @@ namespace GovUKPayApiClient.Api
         /// <param name="toSettledDate">To settled date of refund to be searched (this date is inclusive). Example&#x3D;2015-08-13 (optional)</param>
         /// <param name="page">Page number requested for the search, should be a positive integer (optional, defaults to 1) (optional)</param>
         /// <param name="displaySize">Number of results to be shown per page, should be a positive integer (optional, defaults to 500, max 500) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RefundSearchResults)</returns>
-        public async System.Threading.Tasks.Task<GovUKPayApiClient.Client.ApiResponse<RefundSearchResults>> SearchRefundsWithHttpInfoAsync(string fromDate = default(string), string toDate = default(string), string fromSettledDate = default(string), string toSettledDate = default(string), string page = default(string), string displaySize = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GovUKPayApiClient.Client.ApiResponse<RefundSearchResults>> SearchRefundsWithHttpInfoAsync(string fromDate = default(string), string toDate = default(string), string fromSettledDate = default(string), string toSettledDate = default(string), string page = default(string), string displaySize = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             GovUKPayApiClient.Client.RequestOptions localVarRequestOptions = new GovUKPayApiClient.Client.RequestOptions();
@@ -847,6 +890,9 @@ namespace GovUKPayApiClient.Api
                 localVarRequestOptions.QueryParameters.Add(GovUKPayApiClient.Client.ClientUtils.ParameterToMultiMap("", "display_size", displaySize));
             }
 
+            localVarRequestOptions.Operation = "RefundingCardPaymentsApi.SearchRefunds";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
             // authentication (BearerAuth) required
             // bearer authentication required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -875,8 +921,9 @@ namespace GovUKPayApiClient.Api
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId"></param>
         /// <param name="paymentRefundRequest">requestPayload</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Refund</returns>
-        public Refund SubmitARefundForAPayment(string paymentId, PaymentRefundRequest paymentRefundRequest)
+        public Refund SubmitARefundForAPayment(string paymentId, PaymentRefundRequest paymentRefundRequest, int operationIndex = 0)
         {
             GovUKPayApiClient.Client.ApiResponse<Refund> localVarResponse = SubmitARefundForAPaymentWithHttpInfo(paymentId, paymentRefundRequest);
             return localVarResponse.Data;
@@ -888,8 +935,9 @@ namespace GovUKPayApiClient.Api
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId"></param>
         /// <param name="paymentRefundRequest">requestPayload</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Refund</returns>
-        public GovUKPayApiClient.Client.ApiResponse<Refund> SubmitARefundForAPaymentWithHttpInfo(string paymentId, PaymentRefundRequest paymentRefundRequest)
+        public GovUKPayApiClient.Client.ApiResponse<Refund> SubmitARefundForAPaymentWithHttpInfo(string paymentId, PaymentRefundRequest paymentRefundRequest, int operationIndex = 0)
         {
             // verify the required parameter 'paymentId' is set
             if (paymentId == null)
@@ -928,6 +976,9 @@ namespace GovUKPayApiClient.Api
 
             localVarRequestOptions.PathParameters.Add("paymentId", GovUKPayApiClient.Client.ClientUtils.ParameterToString(paymentId)); // path parameter
             localVarRequestOptions.Data = paymentRefundRequest;
+
+            localVarRequestOptions.Operation = "RefundingCardPaymentsApi.SubmitARefundForAPayment";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (BearerAuth) required
             // bearer authentication required
@@ -956,11 +1007,12 @@ namespace GovUKPayApiClient.Api
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId"></param>
         /// <param name="paymentRefundRequest">requestPayload</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Refund</returns>
-        public async System.Threading.Tasks.Task<Refund> SubmitARefundForAPaymentAsync(string paymentId, PaymentRefundRequest paymentRefundRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Refund> SubmitARefundForAPaymentAsync(string paymentId, PaymentRefundRequest paymentRefundRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            GovUKPayApiClient.Client.ApiResponse<Refund> localVarResponse = await SubmitARefundForAPaymentWithHttpInfoAsync(paymentId, paymentRefundRequest, cancellationToken).ConfigureAwait(false);
+            GovUKPayApiClient.Client.ApiResponse<Refund> localVarResponse = await SubmitARefundForAPaymentWithHttpInfoAsync(paymentId, paymentRefundRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -970,9 +1022,10 @@ namespace GovUKPayApiClient.Api
         /// <exception cref="GovUKPayApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paymentId"></param>
         /// <param name="paymentRefundRequest">requestPayload</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Refund)</returns>
-        public async System.Threading.Tasks.Task<GovUKPayApiClient.Client.ApiResponse<Refund>> SubmitARefundForAPaymentWithHttpInfoAsync(string paymentId, PaymentRefundRequest paymentRefundRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GovUKPayApiClient.Client.ApiResponse<Refund>> SubmitARefundForAPaymentWithHttpInfoAsync(string paymentId, PaymentRefundRequest paymentRefundRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'paymentId' is set
             if (paymentId == null)
@@ -1012,6 +1065,9 @@ namespace GovUKPayApiClient.Api
 
             localVarRequestOptions.PathParameters.Add("paymentId", GovUKPayApiClient.Client.ClientUtils.ParameterToString(paymentId)); // path parameter
             localVarRequestOptions.Data = paymentRefundRequest;
+
+            localVarRequestOptions.Operation = "RefundingCardPaymentsApi.SubmitARefundForAPayment";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (BearerAuth) required
             // bearer authentication required

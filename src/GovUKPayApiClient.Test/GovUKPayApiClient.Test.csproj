@@ -3,7 +3,7 @@
   <PropertyGroup>
     <AssemblyName>GovUKPayApiClient.Test</AssemblyName>
     <RootNamespace>GovUKPayApiClient.Test</RootNamespace>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 

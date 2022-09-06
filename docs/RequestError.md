@@ -1,5 +1,5 @@
-# GovUKPayApiClient.Model.PaymentError
-A Payment Error response
+# GovUKPayApiClient.Model.RequestError
+A Request Error response
 
 ## Properties
 

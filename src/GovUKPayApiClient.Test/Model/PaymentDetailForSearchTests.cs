@@ -73,6 +73,14 @@ namespace GovUKPayApiClient.Test.Model
             // TODO unit test for the property 'Amount'
         }
         /// <summary>
+        /// Test the property 'AuthorisationMode'
+        /// </summary>
+        [Fact]
+        public void AuthorisationModeTest()
+        {
+            // TODO unit test for the property 'AuthorisationMode'
+        }
+        /// <summary>
         /// Test the property 'AuthorisationSummary'
         /// </summary>
         [Fact]

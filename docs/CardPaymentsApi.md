@@ -2,15 +2,14 @@
 
 All URIs are relative to *https://publicapi.payments.service.gov.uk*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**CancelAPayment**](CardPaymentsApi.md#cancelapayment) | **POST** /v1/payments/{paymentId}/cancel | Cancel payment
-[**CaptureAPayment**](CardPaymentsApi.md#captureapayment) | **POST** /v1/payments/{paymentId}/capture | Capture payment
-[**CreateAPayment**](CardPaymentsApi.md#createapayment) | **POST** /v1/payments | Create new payment
-[**GetAPayment**](CardPaymentsApi.md#getapayment) | **GET** /v1/payments/{paymentId} | Find payment by ID
-[**GetEventsForAPayment**](CardPaymentsApi.md#geteventsforapayment) | **GET** /v1/payments/{paymentId}/events | Return payment events by ID
-[**SearchPayments**](CardPaymentsApi.md#searchpayments) | **GET** /v1/payments | Search payments
-
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**CancelAPayment**](CardPaymentsApi.md#cancelapayment) | **POST** /v1/payments/{paymentId}/cancel | Cancel payment |
+| [**CaptureAPayment**](CardPaymentsApi.md#captureapayment) | **POST** /v1/payments/{paymentId}/capture | Capture payment |
+| [**CreateAPayment**](CardPaymentsApi.md#createapayment) | **POST** /v1/payments | Create new payment |
+| [**GetAPayment**](CardPaymentsApi.md#getapayment) | **GET** /v1/payments/{paymentId} | Find payment by ID |
+| [**GetEventsForAPayment**](CardPaymentsApi.md#geteventsforapayment) | **GET** /v1/payments/{paymentId}/events | Return payment events by ID |
+| [**SearchPayments**](CardPaymentsApi.md#searchpayments) | **GET** /v1/payments | Search payments |
 
 <a name="cancelapayment"></a>
 # **CancelAPayment**
@@ -49,8 +48,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CardPaymentsApi.CancelAPayment: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling CardPaymentsApi.CancelAPayment: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -58,11 +57,28 @@ namespace Example
 }
 ```
 
+#### Using the CancelAPaymentWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Cancel payment
+    apiInstance.CancelAPaymentWithHttpInfo(paymentId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CardPaymentsApi.CancelAPaymentWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **paymentId** | **string**| Payment identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **paymentId** | **string** | Payment identifier |  |
 
 ### Return type
 
@@ -128,8 +144,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CardPaymentsApi.CaptureAPayment: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling CardPaymentsApi.CaptureAPayment: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -137,11 +153,28 @@ namespace Example
 }
 ```
 
+#### Using the CaptureAPaymentWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Capture payment
+    apiInstance.CaptureAPaymentWithHttpInfo(paymentId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CardPaymentsApi.CaptureAPaymentWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **paymentId** | **string**| Payment identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **paymentId** | **string** | Payment identifier |  |
 
 ### Return type
 
@@ -208,8 +241,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CardPaymentsApi.CreateAPayment: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling CardPaymentsApi.CreateAPayment: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -217,11 +250,31 @@ namespace Example
 }
 ```
 
+#### Using the CreateAPaymentWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Create new payment
+    ApiResponse<CreatePaymentResult> response = apiInstance.CreateAPaymentWithHttpInfo(createCardPaymentRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CardPaymentsApi.CreateAPaymentWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **createCardPaymentRequest** | [**CreateCardPaymentRequest**](CreateCardPaymentRequest.md)| requestPayload | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **createCardPaymentRequest** | [**CreateCardPaymentRequest**](CreateCardPaymentRequest.md) | requestPayload |  |
 
 ### Return type
 
@@ -287,8 +340,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CardPaymentsApi.GetAPayment: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling CardPaymentsApi.GetAPayment: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -296,11 +349,31 @@ namespace Example
 }
 ```
 
+#### Using the GetAPaymentWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Find payment by ID
+    ApiResponse<GetPaymentResult> response = apiInstance.GetAPaymentWithHttpInfo(paymentId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CardPaymentsApi.GetAPaymentWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **paymentId** | **string**| Payment identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **paymentId** | **string** | Payment identifier |  |
 
 ### Return type
 
@@ -365,8 +438,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CardPaymentsApi.GetEventsForAPayment: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling CardPaymentsApi.GetEventsForAPayment: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -374,11 +447,31 @@ namespace Example
 }
 ```
 
+#### Using the GetEventsForAPaymentWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Return payment events by ID
+    ApiResponse<PaymentEvents> response = apiInstance.GetEventsForAPaymentWithHttpInfo(paymentId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CardPaymentsApi.GetEventsForAPaymentWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **paymentId** | **string**| Payment identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **paymentId** | **string** | Payment identifier |  |
 
 ### Return type
 
@@ -455,8 +548,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CardPaymentsApi.SearchPayments: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling CardPaymentsApi.SearchPayments: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -464,23 +557,43 @@ namespace Example
 }
 ```
 
+#### Using the SearchPaymentsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Search payments
+    ApiResponse<PaymentSearchResults> response = apiInstance.SearchPaymentsWithHttpInfo(reference, email, state, cardBrand, fromDate, toDate, page, displaySize, cardholderName, firstDigitsCardNumber, lastDigitsCardNumber, fromSettledDate, toSettledDate);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CardPaymentsApi.SearchPaymentsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **reference** | **string**| Your payment reference to search (exact match, case insensitive) | [optional] 
- **email** | **string**| The user email used in the payment to be searched | [optional] 
- **state** | **string**| State of payments to be searched. Example&#x3D;success | [optional] 
- **cardBrand** | **string**| Card brand used for payment. Example&#x3D;master-card | [optional] 
- **fromDate** | **string**| From date of payments to be searched (this date is inclusive). Example&#x3D;2015-08-13T12:35:00Z | [optional] 
- **toDate** | **string**| To date of payments to be searched (this date is exclusive). Example&#x3D;2015-08-14T12:35:00Z | [optional] 
- **page** | **string**| Page number requested for the search, should be a positive integer (optional, defaults to 1) | [optional] 
- **displaySize** | **string**| Number of results to be shown per page, should be a positive integer (optional, defaults to 500, max 500) | [optional] 
- **cardholderName** | **string**| Name on card used to make payment | [optional] 
- **firstDigitsCardNumber** | **string**| First six digits of the card used to make payment | [optional] 
- **lastDigitsCardNumber** | **string**| Last four digits of the card used to make payment | [optional] 
- **fromSettledDate** | **string**| From settled date of payment to be searched (this date is inclusive). Example&#x3D;2015-08-13 | [optional] 
- **toSettledDate** | **string**| To settled date of payment to be searched (this date is inclusive). Example&#x3D;2015-08-14 | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **reference** | **string** | Your payment reference to search (exact match, case insensitive) | [optional]  |
+| **email** | **string** | The user email used in the payment to be searched | [optional]  |
+| **state** | **string** | State of payments to be searched. Example&#x3D;success | [optional]  |
+| **cardBrand** | **string** | Card brand used for payment. Example&#x3D;master-card | [optional]  |
+| **fromDate** | **string** | From date of payments to be searched (this date is inclusive). Example&#x3D;2015-08-13T12:35:00Z | [optional]  |
+| **toDate** | **string** | To date of payments to be searched (this date is exclusive). Example&#x3D;2015-08-14T12:35:00Z | [optional]  |
+| **page** | **string** | Page number requested for the search, should be a positive integer (optional, defaults to 1) | [optional]  |
+| **displaySize** | **string** | Number of results to be shown per page, should be a positive integer (optional, defaults to 500, max 500) | [optional]  |
+| **cardholderName** | **string** | Name on card used to make payment | [optional]  |
+| **firstDigitsCardNumber** | **string** | First six digits of the card used to make payment | [optional]  |
+| **lastDigitsCardNumber** | **string** | Last four digits of the card used to make payment | [optional]  |
+| **fromSettledDate** | **string** | From settled date of payment to be searched (this date is inclusive). Example&#x3D;2015-08-13 | [optional]  |
+| **toSettledDate** | **string** | To settled date of payment to be searched (this date is inclusive). Example&#x3D;2015-08-14 | [optional]  |
 
 ### Return type
 

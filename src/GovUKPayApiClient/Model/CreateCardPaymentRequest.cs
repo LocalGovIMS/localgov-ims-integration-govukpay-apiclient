@@ -81,17 +81,20 @@ namespace GovUKPayApiClient.Model
         {
             this.Amount = amount;
             // to ensure "description" is required (not null)
-            if (description == null) {
+            if (description == null)
+            {
                 throw new ArgumentNullException("description is a required property for CreateCardPaymentRequest and cannot be null");
             }
             this.Description = description;
             // to ensure "reference" is required (not null)
-            if (reference == null) {
+            if (reference == null)
+            {
                 throw new ArgumentNullException("reference is a required property for CreateCardPaymentRequest and cannot be null");
             }
             this.Reference = reference;
             // to ensure "returnUrl" is required (not null)
-            if (returnUrl == null) {
+            if (returnUrl == null)
+            {
                 throw new ArgumentNullException("returnUrl is a required property for CreateCardPaymentRequest and cannot be null");
             }
             this.ReturnUrl = returnUrl;
