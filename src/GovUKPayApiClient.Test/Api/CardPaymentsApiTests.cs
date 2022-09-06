@@ -18,6 +18,9 @@ using Xunit;
 
 using GovUKPayApiClient.Client;
 using GovUKPayApiClient.Api;
+using GovUKPayApiClient.Model;
+using System.Diagnostics;
+using System.Threading;
 // uncomment below to import models
 //using GovUKPayApiClient.Model;
 
@@ -36,7 +39,9 @@ namespace GovUKPayApiClient.Test.Api
 
         public CardPaymentsApiTests()
         {
-            instance = new CardPaymentsApi();
+            // BMBC - api_test_94avgeuigduvdjrrdjkm06fc0la1eu40oe0re9t67kpef372f96cda19m2
+            
+            instance = new CardPaymentsApi() { Configuration = new Configuration { AccessToken = "api_test_94avgeuigduvdjrrdjkm06fc0la1eu40oe0re9t67kpef372f96cda19m2" } };
         }
 
         public void Dispose()
@@ -83,21 +88,38 @@ namespace GovUKPayApiClient.Test.Api
         public void CreateAPaymentTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //CreateCardPaymentRequest createCardPaymentRequest = null;
-            //var response = instance.CreateAPayment(createCardPaymentRequest);
-            //Assert.IsType<CreatePaymentResult>(response);
+            CreateCardPaymentRequest createCardPaymentRequest = new CreateCardPaymentRequest(
+                description: "Test", 
+                reference: DateTime.Now.Ticks.ToString(), 
+                returnUrl: "http://www.google.com",
+                amount: 100);
+            
+            var response = instance.CreateAPayment(createCardPaymentRequest);
+            Assert.IsType<CreatePaymentResult>(response);
         }
 
         /// <summary>
         /// Test GetAPayment
         /// </summary>
-        [Fact]
-        public void GetAPaymentTest()
+        [Theory]
+        //[InlineData("vsr9m9jvdt82adh2ksvk4cnheh")]
+        //[InlineData("giq3bqqokg31p41f9b0telcq1c")]
+        //[InlineData("sl9cfa63mkc48g1r1kh2f79cpl")]
+        //[InlineData("ibsum5p767bro5di78natn97pp")]
+        //[InlineData("orclsdlch61qq2dfo51ebhq667")]
+        //[InlineData("99kdtpak46gpp0vfhboi2q7g64")]
+        //[InlineData("47uvrokk5nnp6tn656t0984gl8")]
+        //[InlineData("ctla33n2lqfdpch9cooahg5mk0")]
+
+        [InlineData("90unrmpvk83trk50g2tgpqn6ph")]
+        public void GetAPaymentTest(string paymentId)
         {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string paymentId = null;
-            //var response = instance.GetAPayment(paymentId);
-            //Assert.IsType<GetPaymentResult>(response);
+            //string paymentId = "vsr9m9jvdt82adh2ksvk4cnheh";
+            var response = instance.GetAPayment(paymentId);
+            Debug.WriteLine(response.Fee);
+            Assert.IsType<GetPaymentResult>(response);
+                
+            Thread.Sleep(2000);
         }
 
         /// <summary>

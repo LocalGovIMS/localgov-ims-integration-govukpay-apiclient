@@ -34,6 +34,7 @@ namespace GovUKPayApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentLinks" /> class.
         /// </summary>
+        /// <param name="authUrlPost">authUrlPost.</param>
         /// <param name="cancel">cancel.</param>
         /// <param name="capture">capture.</param>
         /// <param name="events">events.</param>
@@ -41,8 +42,9 @@ namespace GovUKPayApiClient.Model
         /// <param name="nextUrlPost">nextUrlPost.</param>
         /// <param name="refunds">refunds.</param>
         /// <param name="self">self.</param>
-        public PaymentLinks(PostLink cancel = default(PostLink), PostLink capture = default(PostLink), Link events = default(Link), Link nextUrl = default(Link), PostLink nextUrlPost = default(PostLink), Link refunds = default(Link), Link self = default(Link))
+        public PaymentLinks(PostLink authUrlPost = default(PostLink), PostLink cancel = default(PostLink), PostLink capture = default(PostLink), Link events = default(Link), Link nextUrl = default(Link), PostLink nextUrlPost = default(PostLink), Link refunds = default(Link), Link self = default(Link))
         {
+            this.AuthUrlPost = authUrlPost;
             this.Cancel = cancel;
             this.Capture = capture;
             this.Events = events;
@@ -51,6 +53,12 @@ namespace GovUKPayApiClient.Model
             this.Refunds = refunds;
             this.Self = self;
         }
+
+        /// <summary>
+        /// Gets or Sets AuthUrlPost
+        /// </summary>
+        [DataMember(Name = "auth_url_post", EmitDefaultValue = false)]
+        public PostLink AuthUrlPost { get; set; }
 
         /// <summary>
         /// Gets or Sets Cancel
@@ -102,6 +110,7 @@ namespace GovUKPayApiClient.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class PaymentLinks {\n");
+            sb.Append("  AuthUrlPost: ").Append(AuthUrlPost).Append("\n");
             sb.Append("  Cancel: ").Append(Cancel).Append("\n");
             sb.Append("  Capture: ").Append(Capture).Append("\n");
             sb.Append("  Events: ").Append(Events).Append("\n");
@@ -144,6 +153,11 @@ namespace GovUKPayApiClient.Model
                 return false;
             }
             return 
+                (
+                    this.AuthUrlPost == input.AuthUrlPost ||
+                    (this.AuthUrlPost != null &&
+                    this.AuthUrlPost.Equals(input.AuthUrlPost))
+                ) && 
                 (
                     this.Cancel == input.Cancel ||
                     (this.Cancel != null &&
@@ -190,6 +204,10 @@ namespace GovUKPayApiClient.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.AuthUrlPost != null)
+                {
+                    hashCode = (hashCode * 59) + this.AuthUrlPost.GetHashCode();
+                }
                 if (this.Cancel != null)
                 {
                     hashCode = (hashCode * 59) + this.Cancel.GetHashCode();

@@ -32,6 +32,40 @@ namespace GovUKPayApiClient.Model
     public partial class PaymentDetailForSearch : IEquatable<PaymentDetailForSearch>, IValidatableObject
     {
         /// <summary>
+        /// How the payment will be authorised. Payments created in &#x60;web&#x60; mode require the paying user to visit the &#x60;next_url&#x60; to complete the payment.
+        /// </summary>
+        /// <value>How the payment will be authorised. Payments created in &#x60;web&#x60; mode require the paying user to visit the &#x60;next_url&#x60; to complete the payment.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum AuthorisationModeEnum
+        {
+            /// <summary>
+            /// Enum Web for value: web
+            /// </summary>
+            [EnumMember(Value = "web")]
+            Web = 1,
+
+            /// <summary>
+            /// Enum MotoApi for value: moto_api
+            /// </summary>
+            [EnumMember(Value = "moto_api")]
+            MotoApi = 2,
+
+            /// <summary>
+            /// Enum External for value: external
+            /// </summary>
+            [EnumMember(Value = "external")]
+            External = 3
+
+        }
+
+
+        /// <summary>
+        /// How the payment will be authorised. Payments created in &#x60;web&#x60; mode require the paying user to visit the &#x60;next_url&#x60; to complete the payment.
+        /// </summary>
+        /// <value>How the payment will be authorised. Payments created in &#x60;web&#x60; mode require the paying user to visit the &#x60;next_url&#x60; to complete the payment.</value>
+        [DataMember(Name = "authorisation_mode", EmitDefaultValue = false)]
+        public AuthorisationModeEnum? AuthorisationMode { get; set; }
+        /// <summary>
         /// Defines Language
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
@@ -62,6 +96,7 @@ namespace GovUKPayApiClient.Model
         /// </summary>
         /// <param name="links">links.</param>
         /// <param name="amount">amount.</param>
+        /// <param name="authorisationMode">How the payment will be authorised. Payments created in &#x60;web&#x60; mode require the paying user to visit the &#x60;next_url&#x60; to complete the payment..</param>
         /// <param name="authorisationSummary">authorisationSummary.</param>
         /// <param name="cardDetails">cardDetails.</param>
         /// <param name="description">description.</param>
@@ -73,10 +108,11 @@ namespace GovUKPayApiClient.Model
         /// <param name="refundSummary">refundSummary.</param>
         /// <param name="settlementSummary">settlementSummary.</param>
         /// <param name="state">state.</param>
-        public PaymentDetailForSearch(PaymentLinksForSearch links = default(PaymentLinksForSearch), long amount = default(long), AuthorisationSummary authorisationSummary = default(AuthorisationSummary), CardDetails cardDetails = default(CardDetails), string description = default(string), string email = default(string), LanguageEnum? language = default(LanguageEnum?), ExternalMetadata metadata = default(ExternalMetadata), bool moto = default(bool), string reference = default(string), RefundSummary refundSummary = default(RefundSummary), PaymentSettlementSummary settlementSummary = default(PaymentSettlementSummary), PaymentState state = default(PaymentState))
+        public PaymentDetailForSearch(PaymentLinksForSearch links = default(PaymentLinksForSearch), long amount = default(long), AuthorisationModeEnum? authorisationMode = default(AuthorisationModeEnum?), AuthorisationSummary authorisationSummary = default(AuthorisationSummary), CardDetails cardDetails = default(CardDetails), string description = default(string), string email = default(string), LanguageEnum? language = default(LanguageEnum?), ExternalMetadata metadata = default(ExternalMetadata), bool moto = default(bool), string reference = default(string), RefundSummary refundSummary = default(RefundSummary), PaymentSettlementSummary settlementSummary = default(PaymentSettlementSummary), PaymentState state = default(PaymentState))
         {
             this.Links = links;
             this.Amount = amount;
+            this.AuthorisationMode = authorisationMode;
             this.AuthorisationSummary = authorisationSummary;
             this.CardDetails = cardDetails;
             this.Description = description;
@@ -332,6 +368,7 @@ namespace GovUKPayApiClient.Model
             sb.Append("class PaymentDetailForSearch {\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("  Amount: ").Append(Amount).Append("\n");
+            sb.Append("  AuthorisationMode: ").Append(AuthorisationMode).Append("\n");
             sb.Append("  AuthorisationSummary: ").Append(AuthorisationSummary).Append("\n");
             sb.Append("  CardBrand: ").Append(CardBrand).Append("\n");
             sb.Append("  CardDetails: ").Append(CardDetails).Append("\n");
@@ -397,6 +434,10 @@ namespace GovUKPayApiClient.Model
                 (
                     this.Amount == input.Amount ||
                     this.Amount.Equals(input.Amount)
+                ) && 
+                (
+                    this.AuthorisationMode == input.AuthorisationMode ||
+                    this.AuthorisationMode.Equals(input.AuthorisationMode)
                 ) && 
                 (
                     this.AuthorisationSummary == input.AuthorisationSummary ||
@@ -517,6 +558,7 @@ namespace GovUKPayApiClient.Model
                     hashCode = (hashCode * 59) + this.Links.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Amount.GetHashCode();
+                hashCode = (hashCode * 59) + this.AuthorisationMode.GetHashCode();
                 if (this.AuthorisationSummary != null)
                 {
                     hashCode = (hashCode * 59) + this.AuthorisationSummary.GetHashCode();

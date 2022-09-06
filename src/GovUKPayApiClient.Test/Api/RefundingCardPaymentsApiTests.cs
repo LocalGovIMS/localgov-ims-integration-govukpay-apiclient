@@ -18,6 +18,7 @@ using Xunit;
 
 using GovUKPayApiClient.Client;
 using GovUKPayApiClient.Api;
+using GovUKPayApiClient.Model;
 // uncomment below to import models
 //using GovUKPayApiClient.Model;
 
@@ -36,7 +37,7 @@ namespace GovUKPayApiClient.Test.Api
 
         public RefundingCardPaymentsApiTests()
         {
-            instance = new RefundingCardPaymentsApi();
+            instance = new RefundingCardPaymentsApi() { Configuration = new Configuration { AccessToken = "api_test_94avgeuigduvdjrrdjkm06fc0la1eu40oe0re9t67kpef372f96cda19m2" } };
         }
 
         public void Dispose()
@@ -103,10 +104,10 @@ namespace GovUKPayApiClient.Test.Api
         public void SubmitARefundForAPaymentTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string paymentId = null;
-            //PaymentRefundRequest paymentRefundRequest = null;
-            //var response = instance.SubmitARefundForAPayment(paymentId, paymentRefundRequest);
-            //Assert.IsType<Refund>(response);
+            string paymentId = "90unrmpvk83trk50g2tgpqn6ph";
+            PaymentRefundRequest paymentRefundRequest = new PaymentRefundRequest(10);
+            var response = instance.SubmitARefundForAPayment(paymentId, paymentRefundRequest);
+            Assert.IsType<Refund>(response);
         }
     }
 }

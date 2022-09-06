@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Links** | [**PaymentLinks**](PaymentLinks.md) |  | [optional] 
 **Amount** | **long** |  | [optional] 
+**AuthorisationMode** | **string** | How the payment will be authorised. Payments created in &#x60;web&#x60; mode require the paying user to visit the &#x60;next_url&#x60; to complete the payment. | [optional] 
 **AuthorisationSummary** | [**AuthorisationSummary**](AuthorisationSummary.md) |  | [optional] 
 **CardBrand** | **string** | Card Brand. Deprecated, please use card_details.card_brand instead | [optional] [readonly] 
 **CardDetails** | [**CardDetails**](CardDetails.md) |  | [optional] 

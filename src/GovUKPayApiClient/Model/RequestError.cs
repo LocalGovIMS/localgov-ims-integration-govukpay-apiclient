@@ -26,18 +26,18 @@ using OpenAPIDateConverter = GovUKPayApiClient.Client.OpenAPIDateConverter;
 namespace GovUKPayApiClient.Model
 {
     /// <summary>
-    /// A Payment Error response
+    /// A Request Error response
     /// </summary>
-    [DataContract(Name = "PaymentError")]
-    public partial class PaymentError : IEquatable<PaymentError>, IValidatableObject
+    [DataContract(Name = "RequestError")]
+    public partial class RequestError : IEquatable<RequestError>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PaymentError" /> class.
+        /// Initializes a new instance of the <see cref="RequestError" /> class.
         /// </summary>
         /// <param name="code">code.</param>
         /// <param name="description">description.</param>
         /// <param name="field">field.</param>
-        public PaymentError(string code = default(string), string description = default(string), string field = default(string))
+        public RequestError(string code = default(string), string description = default(string), string field = default(string))
         {
             this.Code = code;
             this.Description = description;
@@ -69,7 +69,7 @@ namespace GovUKPayApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class PaymentError {\n");
+            sb.Append("class RequestError {\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Field: ").Append(Field).Append("\n");
@@ -93,15 +93,15 @@ namespace GovUKPayApiClient.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as PaymentError);
+            return this.Equals(input as RequestError);
         }
 
         /// <summary>
-        /// Returns true if PaymentError instances are equal
+        /// Returns true if RequestError instances are equal
         /// </summary>
-        /// <param name="input">Instance of PaymentError to be compared</param>
+        /// <param name="input">Instance of RequestError to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(PaymentError input)
+        public bool Equals(RequestError input)
         {
             if (input == null)
             {

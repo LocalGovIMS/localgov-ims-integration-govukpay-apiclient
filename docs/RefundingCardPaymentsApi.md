@@ -2,13 +2,12 @@
 
 All URIs are relative to *https://publicapi.payments.service.gov.uk*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**GetAPaymentRefund**](RefundingCardPaymentsApi.md#getapaymentrefund) | **GET** /v1/payments/{paymentId}/refunds/{refundId} | Find payment refund by ID
-[**GetAllRefundsForAPayment**](RefundingCardPaymentsApi.md#getallrefundsforapayment) | **GET** /v1/payments/{paymentId}/refunds | Get all refunds for a payment
-[**SearchRefunds**](RefundingCardPaymentsApi.md#searchrefunds) | **GET** /v1/refunds | Search refunds
-[**SubmitARefundForAPayment**](RefundingCardPaymentsApi.md#submitarefundforapayment) | **POST** /v1/payments/{paymentId}/refunds | Submit a refund for a payment
-
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**GetAPaymentRefund**](RefundingCardPaymentsApi.md#getapaymentrefund) | **GET** /v1/payments/{paymentId}/refunds/{refundId} | Find payment refund by ID |
+| [**GetAllRefundsForAPayment**](RefundingCardPaymentsApi.md#getallrefundsforapayment) | **GET** /v1/payments/{paymentId}/refunds | Get all refunds for a payment |
+| [**SearchRefunds**](RefundingCardPaymentsApi.md#searchrefunds) | **GET** /v1/refunds | Search refunds |
+| [**SubmitARefundForAPayment**](RefundingCardPaymentsApi.md#submitarefundforapayment) | **POST** /v1/payments/{paymentId}/refunds | Submit a refund for a payment |
 
 <a name="getapaymentrefund"></a>
 # **GetAPaymentRefund**
@@ -49,8 +48,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling RefundingCardPaymentsApi.GetAPaymentRefund: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling RefundingCardPaymentsApi.GetAPaymentRefund: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -58,12 +57,32 @@ namespace Example
 }
 ```
 
+#### Using the GetAPaymentRefundWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Find payment refund by ID
+    ApiResponse<Refund> response = apiInstance.GetAPaymentRefundWithHttpInfo(paymentId, refundId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RefundingCardPaymentsApi.GetAPaymentRefundWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **paymentId** | **string**|  | 
- **refundId** | **string**|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **paymentId** | **string** |  |  |
+| **refundId** | **string** |  |  |
 
 ### Return type
 
@@ -128,8 +147,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling RefundingCardPaymentsApi.GetAllRefundsForAPayment: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling RefundingCardPaymentsApi.GetAllRefundsForAPayment: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -137,11 +156,31 @@ namespace Example
 }
 ```
 
+#### Using the GetAllRefundsForAPaymentWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get all refunds for a payment
+    ApiResponse<RefundForSearchResult> response = apiInstance.GetAllRefundsForAPaymentWithHttpInfo(paymentId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RefundingCardPaymentsApi.GetAllRefundsForAPaymentWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **paymentId** | **string**|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **paymentId** | **string** |  |  |
 
 ### Return type
 
@@ -211,8 +250,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling RefundingCardPaymentsApi.SearchRefunds: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling RefundingCardPaymentsApi.SearchRefunds: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -220,16 +259,36 @@ namespace Example
 }
 ```
 
+#### Using the SearchRefundsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Search refunds
+    ApiResponse<RefundSearchResults> response = apiInstance.SearchRefundsWithHttpInfo(fromDate, toDate, fromSettledDate, toSettledDate, page, displaySize);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RefundingCardPaymentsApi.SearchRefundsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **fromDate** | **string**| From date of refunds to be searched (this date is inclusive). Example&#x3D;2015-08-13T12:35:00Z | [optional] 
- **toDate** | **string**| To date of refunds to be searched (this date is exclusive). Example&#x3D;2015-08-14T12:35:00Z | [optional] 
- **fromSettledDate** | **string**| From settled date of refund to be searched (this date is inclusive). Example&#x3D;2015-08-13 | [optional] 
- **toSettledDate** | **string**| To settled date of refund to be searched (this date is inclusive). Example&#x3D;2015-08-13 | [optional] 
- **page** | **string**| Page number requested for the search, should be a positive integer (optional, defaults to 1) | [optional] 
- **displaySize** | **string**| Number of results to be shown per page, should be a positive integer (optional, defaults to 500, max 500) | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **fromDate** | **string** | From date of refunds to be searched (this date is inclusive). Example&#x3D;2015-08-13T12:35:00Z | [optional]  |
+| **toDate** | **string** | To date of refunds to be searched (this date is exclusive). Example&#x3D;2015-08-14T12:35:00Z | [optional]  |
+| **fromSettledDate** | **string** | From settled date of refund to be searched (this date is inclusive). Example&#x3D;2015-08-13 | [optional]  |
+| **toSettledDate** | **string** | To settled date of refund to be searched (this date is inclusive). Example&#x3D;2015-08-13 | [optional]  |
+| **page** | **string** | Page number requested for the search, should be a positive integer (optional, defaults to 1) | [optional]  |
+| **displaySize** | **string** | Number of results to be shown per page, should be a positive integer (optional, defaults to 500, max 500) | [optional]  |
 
 ### Return type
 
@@ -294,8 +353,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling RefundingCardPaymentsApi.SubmitARefundForAPayment: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling RefundingCardPaymentsApi.SubmitARefundForAPayment: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -303,12 +362,32 @@ namespace Example
 }
 ```
 
+#### Using the SubmitARefundForAPaymentWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Submit a refund for a payment
+    ApiResponse<Refund> response = apiInstance.SubmitARefundForAPaymentWithHttpInfo(paymentId, paymentRefundRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RefundingCardPaymentsApi.SubmitARefundForAPaymentWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **paymentId** | **string**|  | 
- **paymentRefundRequest** | [**PaymentRefundRequest**](PaymentRefundRequest.md)| requestPayload | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **paymentId** | **string** |  |  |
+| **paymentRefundRequest** | [**PaymentRefundRequest**](PaymentRefundRequest.md) | requestPayload |  |
 
 ### Return type
 

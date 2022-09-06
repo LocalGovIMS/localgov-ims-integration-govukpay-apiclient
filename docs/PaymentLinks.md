@@ -5,6 +5,7 @@ links for payment
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AuthUrlPost** | [**PostLink**](PostLink.md) |  | [optional] 
 **Cancel** | [**PostLink**](PostLink.md) |  | [optional] 
 **Capture** | [**PostLink**](PostLink.md) |  | [optional] 
 **Events** | [**Link**](Link.md) |  | [optional] 

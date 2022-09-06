@@ -26,41 +26,25 @@ using OpenAPIDateConverter = GovUKPayApiClient.Client.OpenAPIDateConverter;
 namespace GovUKPayApiClient.Model
 {
     /// <summary>
-    /// A Refund Error response
+    /// links for search dispute resource
     /// </summary>
-    [DataContract(Name = "RefundError")]
-    public partial class RefundError : IEquatable<RefundError>, IValidatableObject
+    [DataContract(Name = "DisputeLinksForSearch")]
+    public partial class DisputeLinksForSearch : IEquatable<DisputeLinksForSearch>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="RefundError" /> class.
+        /// Initializes a new instance of the <see cref="DisputeLinksForSearch" /> class.
         /// </summary>
-        /// <param name="code">code.</param>
-        /// <param name="description">description.</param>
-        /// <param name="field">field.</param>
-        public RefundError(string code = default(string), string description = default(string), string field = default(string))
+        /// <param name="payment">payment.</param>
+        public DisputeLinksForSearch(Link payment = default(Link))
         {
-            this.Code = code;
-            this.Description = description;
-            this.Field = field;
+            this.Payment = payment;
         }
 
         /// <summary>
-        /// Gets or Sets Code
+        /// Gets or Sets Payment
         /// </summary>
-        [DataMember(Name = "code", EmitDefaultValue = false)]
-        public string Code { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Description
-        /// </summary>
-        [DataMember(Name = "description", EmitDefaultValue = false)]
-        public string Description { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Field
-        /// </summary>
-        [DataMember(Name = "field", EmitDefaultValue = false)]
-        public string Field { get; set; }
+        [DataMember(Name = "payment", EmitDefaultValue = false)]
+        public Link Payment { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -69,10 +53,8 @@ namespace GovUKPayApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class RefundError {\n");
-            sb.Append("  Code: ").Append(Code).Append("\n");
-            sb.Append("  Description: ").Append(Description).Append("\n");
-            sb.Append("  Field: ").Append(Field).Append("\n");
+            sb.Append("class DisputeLinksForSearch {\n");
+            sb.Append("  Payment: ").Append(Payment).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,15 +75,15 @@ namespace GovUKPayApiClient.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as RefundError);
+            return this.Equals(input as DisputeLinksForSearch);
         }
 
         /// <summary>
-        /// Returns true if RefundError instances are equal
+        /// Returns true if DisputeLinksForSearch instances are equal
         /// </summary>
-        /// <param name="input">Instance of RefundError to be compared</param>
+        /// <param name="input">Instance of DisputeLinksForSearch to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(RefundError input)
+        public bool Equals(DisputeLinksForSearch input)
         {
             if (input == null)
             {
@@ -109,19 +91,9 @@ namespace GovUKPayApiClient.Model
             }
             return 
                 (
-                    this.Code == input.Code ||
-                    (this.Code != null &&
-                    this.Code.Equals(input.Code))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Field == input.Field ||
-                    (this.Field != null &&
-                    this.Field.Equals(input.Field))
+                    this.Payment == input.Payment ||
+                    (this.Payment != null &&
+                    this.Payment.Equals(input.Payment))
                 );
         }
 
@@ -134,17 +106,9 @@ namespace GovUKPayApiClient.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Code != null)
+                if (this.Payment != null)
                 {
-                    hashCode = (hashCode * 59) + this.Code.GetHashCode();
-                }
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.Field != null)
-                {
-                    hashCode = (hashCode * 59) + this.Field.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Payment.GetHashCode();
                 }
                 return hashCode;
             }

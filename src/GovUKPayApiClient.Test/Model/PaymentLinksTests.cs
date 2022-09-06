@@ -57,6 +57,14 @@ namespace GovUKPayApiClient.Test.Model
 
 
         /// <summary>
+        /// Test the property 'AuthUrlPost'
+        /// </summary>
+        [Fact]
+        public void AuthUrlPostTest()
+        {
+            // TODO unit test for the property 'AuthUrlPost'
+        }
+        /// <summary>
         /// Test the property 'Cancel'
         /// </summary>
         [Fact]
